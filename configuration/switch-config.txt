@@ -1,0 +1,11 @@
+Switch Configuration
+====================
+
+Devices:
+- SW0 - Cisco 2960
+- SW1 - Cisco 2960
+- SW2 - Cisco 2960
+- SW3 - Cisco 2960
+
+VLAN and switch-port configuration will be documented here.
+Actual commands will be added based on the Packet Tracer configuration.
