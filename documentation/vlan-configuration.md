@@ -4,7 +4,9 @@
 
 VLANs (Virtual Local Area Networks) are used to logically divide the physical network into separate broadcast domains.
 
-In this project, multiple PCs are connected through four Cisco 2960 switches. VLANs are used to organize the network into separate logical groups.
+In this project, 20 PCs are connected through four Cisco 2960 switches. Four VLANs are configured to organize the PCs into separate logical network groups.
+
+Inter-VLAN communication is enabled through the Cisco 2811 router.
 
 ## Network Devices
 
@@ -13,33 +15,35 @@ In this project, multiple PCs are connected through four Cisco 2960 switches. VL
 - SW2 - Cisco 2960
 - SW3 - Cisco 2960
 - R1 - Cisco 2811 Router
+- 20 PCs
 
 ## VLAN Assignment
 
-The exact VLAN IDs and port assignments used in the Packet Tracer topology will be documented here.
+| VLAN | Purpose | Network | Default Gateway |
+|------|---------|---------|-----------------|
+| VLAN 10 | Network Group 1 | 192.168.10.0/24 | 192.168.10.1 |
+| VLAN 20 | Network Group 2 | 192.168.20.0/24 | 192.168.20.1 |
+| VLAN 30 | Network Group 3 | 192.168.30.0/24 | 192.168.30.1 |
+| VLAN 40 | Network Group 4 | 192.168.40.0/24 | 192.168.40.1 |
 
-| VLAN | Purpose | Switch | Connected Devices |
-|------|---------|--------|-------------------|
-| VLAN 10 | Network Group 1 | SW0/SW1/SW2/SW3 | To be documented |
-| VLAN 20 | Network Group 2 | SW0/SW1/SW2/SW3 | To be documented |
-| VLAN 30 | Network Group 3 | SW0/SW1/SW2/SW3 | To be documented |
-| VLAN 40 | Network Group 4 | SW0/SW1/SW2/SW3 | To be documented |
+## PC VLAN Assignment
 
-> The VLAN IDs above are placeholders for documentation structure. They should be replaced with the actual VLAN IDs configured in the Packet Tracer project.
+| VLAN | Connected PCs |
+|------|---------------|
+| VLAN 10 | PC0, PC1, PC2, PC3, PC4 |
+| VLAN 20 | PC5, PC6, PC7, PC8, PC9 |
+| VLAN 30 | PC10, PC11, PC12, PC13, PC14 |
+| VLAN 40 | PC15, PC16, PC17, PC18, PC19 |
 
 ## Access Ports
 
-PC-facing switch ports are configured as access ports and assigned to their respective VLANs.
+PC-facing switch ports are configured as access ports.
 
-## Trunk Links
+Each access port is assigned to the appropriate VLAN based on the connected PC.
 
-Links carrying traffic for multiple VLANs are configured as trunk links where required by the network design.
-
-The trunk configuration allows VLAN traffic to travel between switches and toward the router.
-
-## Verification
-
-VLAN configuration can be verified using commands such as:
+Example:
 
 ```text
-show vlan brief
+interface fastEthernet 0/1
+switchport mode access
+switchport access vlan 10
