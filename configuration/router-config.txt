@@ -1,11 +1,46 @@
-Switch Configuration
-====================
+# Switch Configuration
 
-Devices:
+## Devices
+
 - SW0 - Cisco 2960
 - SW1 - Cisco 2960
 - SW2 - Cisco 2960
 - SW3 - Cisco 2960
 
-VLAN and switch-port configuration will be documented here.
-Actual commands will be added based on the Packet Tracer configuration.
+## VLAN Configuration
+
+The switches are configured with four VLANs:
+
+| VLAN | Name | Network |
+|---|---|---|
+| VLAN 10 | VLAN10 | 192.168.10.0/24 |
+| VLAN 20 | VLAN20 | 192.168.20.0/24 |
+| VLAN 30 | VLAN30 | 192.168.30.0/24 |
+| VLAN 40 | VLAN40 | 192.168.40.0/24 |
+
+## Create VLANs
+
+The following commands can be used on each switch:
+
+```text
+enable
+configure terminal
+
+vlan 10
+name VLAN10
+exit
+
+vlan 20
+name VLAN20
+exit
+
+vlan 30
+name VLAN30
+exit
+
+vlan 40
+name VLAN40
+exit
+
+end
+write memory
