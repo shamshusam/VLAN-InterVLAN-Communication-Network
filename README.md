@@ -57,7 +57,7 @@ The switches are connected in an extended-star arrangement, with **SW0 acting as
 
 ### 📷 Topology Diagram
 
-![Network Topology](topology/network-topology.png)
+![Network Topology](screenshots/network-topology.png.png)
 
 ---
 
