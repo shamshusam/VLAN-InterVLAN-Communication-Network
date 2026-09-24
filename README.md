@@ -94,3 +94,4 @@ The trunk configuration on SW0 was verified using:
 
 ```text
 show interfaces trunk
+
